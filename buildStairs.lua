@@ -146,7 +146,11 @@ local function buildStairsDown(a, b)
         pD("minecraft:stonebrick")
         u(1)
         turtle.turnLeft();turtle.turnLeft();
-        pD("minecraft:stone_brick_stairs")
+        if (b >= 5 and (i_2 == 1 or i_2 == b)) then
+          pD("minecraft:stonebrick")
+        else
+          pD("minecraft:stone_brick_stairs")
+        end
         turtle.turnLeft();turtle.turnLeft();
   
         if(i_2 < b) then
