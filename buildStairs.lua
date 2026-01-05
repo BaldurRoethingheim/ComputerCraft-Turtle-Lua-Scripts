@@ -20,24 +20,36 @@ local function dD()
 end
 local function f(n)
   n = n or 2
+  if n <= 0 then
+    return;
+  end
   for i=1, n, 1 do
     df()
   end
 end
 local function b(n)
-    n = n or 2
-    for i=1, n, 1 do
-      turtle.back()
-    end
+  n = n or 2
+  if n <= 0 then
+    return;
+  end
+  for i=1, n, 1 do
+    turtle.back()
+  end
 end
 local function u(n)
   n = n or 1
+  if n <= 0 then
+    return;
+  end
   for i=1, n, 1 do
       dU()
   end
 end
 local function d(n)
   n = n or 1
+  if n <= 0 then
+    return;
+  end
   for i=1, n, 1 do
       dD()
   end
@@ -169,9 +181,13 @@ end
 -- performed action
 ------------------------------------------------
 print("How long shall the stair case be constructed?")
-local input = io.read()
-input = tonumber(input)
-buildStairsDown(input, 5)
+local length = io.read()
+length = tonumber(length)
+print("How wide shall the stair case be constructed?")
+local width = io.read()
+width = tonumber(width)
+
+buildStairsDown(length, width)
 
 
 ------------------------------------------------
