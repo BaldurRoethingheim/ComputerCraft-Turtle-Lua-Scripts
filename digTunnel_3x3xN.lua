@@ -15,7 +15,7 @@ local function DigUp()
     if turtle.detectUp() == true and turtle.digUp() == false then
         print("block not breakable.");
         print("Job aborted.");
-        os.exit();
+        exit();
     end
 end
 
@@ -23,7 +23,7 @@ local function DigDown()
     if turtle.detectDown() == true and turtle.digDown() == false then
         print("block not breakable.");
         print("Job aborted.");
-        os.exit();
+        exit();
     end
 end
 
