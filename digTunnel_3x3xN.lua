@@ -4,15 +4,15 @@ local length = tonumber(read());
 local height = 3
 
 local function Dig()
-    if turtle.dig() == false then
+    if turtle.detect() == true and turtle.dig() == false then
         print("block not breakable.");
         print("Job aborted.");
-        os.exit();
+        exit();
     end
 end
 
 local function DigUp()
-    if turtle.digUp() == false then
+    if turtle.detectUp() == true and turtle.digUp() == false then
         print("block not breakable.");
         print("Job aborted.");
         os.exit();
@@ -20,7 +20,7 @@ local function DigUp()
 end
 
 local function DigDown()
-    if turtle.digDown() == false then
+    if turtle.detectDown() == true and turtle.digDown() == false then
         print("block not breakable.");
         print("Job aborted.");
         os.exit();
@@ -28,7 +28,7 @@ local function DigDown()
 end
 
 local function neededFuel(len)
-    if (turtle.getFuelLevel <= (len * 5)) then
+    if (turtle.getFuelLevel() <= (len * 5)) then
         print("Not enough fuel for job. Please refuel.");
         return false;
     else
