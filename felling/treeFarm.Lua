@@ -155,8 +155,6 @@ local function tree()
       turtle.select(1)
       turtle.back()
       refuel500()
-    --elseif false then
-      -- try to put sampling down
     else
       pf("minecraft:sapling")
       turtle.select(1)
