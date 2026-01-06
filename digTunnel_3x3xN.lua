@@ -68,7 +68,7 @@ local function Job()
 end
     
 if (neededFuel(length) == false) then
-    os.exit();
+    exit();
 else
    Job(); 
 end
