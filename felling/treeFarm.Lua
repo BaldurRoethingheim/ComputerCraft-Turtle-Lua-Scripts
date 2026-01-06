@@ -123,6 +123,7 @@ end
 local function refuel500()
   while (turtle.getFuelLevel() < 500) do
     if (searchBlock("minecraft:log") == false) then
+      turtle.select(1);
       return false;
     end
     
@@ -130,6 +131,7 @@ local function refuel500()
   end
   print("refueled to above 500")
   print("fuel:", turtle.getFuelLevel())
+  turtle.select(1);
   return true;
 end
 
