@@ -1,0 +1,74 @@
+print("If inventory full, then items drop to floor.")
+print("How long?: ");
+local length = tonumber(read());
+local height = 3
+
+local function Dig()
+    if turtle.dig() == false then
+        print("block not breakable.");
+        print("Job aborted.");
+        os.exit();
+    end
+end
+
+local function DigUp()
+    if turtle.digUp() == false then
+        print("block not breakable.");
+        print("Job aborted.");
+        os.exit();
+    end
+end
+
+local function DigDown()
+    if turtle.digDown() == false then
+        print("block not breakable.");
+        print("Job aborted.");
+        os.exit();
+    end
+end
+
+local function neededFuel(len)
+    if (turtle.getFuelLevel <= (len * 5)) then
+        print("Not enough fuel for job. Please refuel.");
+        return false;
+    else
+        return true;
+    end
+end
+
+local function Job()
+    -- start digging
+    print("Digging tunnel 3x3");
+    
+    for i_2 = 1, length, 1 do
+        for i_1 = 1, height, 1 do
+            turtle.turnLeft();
+            Dig();
+            turtle.turnLeft();turtle.turnLeft();
+            Dig();
+            turtle.turnLeft();
+        
+            if i_1 == height then
+                for a = 1, (height-1), 1 do
+                    turtle.down();    
+                end       
+            else
+                DigUp();
+                turtle.up();
+            end
+    
+        end
+        if (i_2 == length) then
+            print("Job finished, Digger.")
+        else
+            Dig();
+            turtle.forward();
+        end
+    end
+end
+    
+if (neededFuel(length) == false) then
+    os.exit();
+else
+   Job(); 
+end
