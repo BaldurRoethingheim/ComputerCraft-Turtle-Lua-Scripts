@@ -36,6 +36,14 @@ local function neededFuel(len)
     end
 end
 
+-- add optional chest deposition if chest in inventory at start. go back t ochest to deposit and resume where left off.
+local function InventoryFull()
+-- TODO
+end
+local function depositInventory()
+-- TODO
+end
+
 local function Job()
     -- start digging
     print("Digging tunnel 3x3");
