@@ -57,7 +57,7 @@ function l(n)         -- left sideways N
 end
 local max_fuel_lvl = 20000; -- the maximum fuel level a turtle can have
 function refuelN(refuel_to_minimum_level)
-  -- vound check and set them to the extrems
+  -- found check and set them to the extremes
   if refuel_to_minimum_level < 1 then
     refuel_to_minimum_level = 1;
   elseif refuel_to_minimum_level > max_fuel_lvl then
