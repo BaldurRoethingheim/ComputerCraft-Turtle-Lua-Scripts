@@ -1,61 +1,61 @@
 ------------------------------------------------
 -- standard functions 
 ------------------------------------------------
-local function df()         -- digForward
+function df()         -- digForward
   while (turtle.detect()) do
     turtle.dig();
   end    
   turtle.forward();
 end
-local function dU()         -- digUp
+function dU()         -- digUp
   while (turtle.detectUp()) do
       turtle.digUp();
   end
   turtle.up();
 end
-local function dD()         -- digDown
+function dD()         -- digDown
   while (turtle.detectDown()) do
     turtle.digDown();
   end
   turtle.down();
 end
-local function f(n)         -- go forward N with digging if block in they way
+function f(n)         -- go forward N with digging if block in they way
   n = n or 2
   for i=1, n, 1 do
     df();
   end
 end
-local function b(n)         -- go back N
+function b(n)         -- go back N
   n = n or 2
   for i=1, n, 1 do
     turtle.back();
   end
 end
-local function u(n)         -- go up N with digging if block in they way
+function u(n)         -- go up N with digging if block in they way
   n = n or 1
   for i=1, n, 1 do
     dU();
   end
 end
-local function d(n)         -- go down N with digging if block in they way
+function d(n)         -- go down N with digging if block in they way
   n = n or 1
   for i=1, n, 1 do
     dD();
   end
 end
-local function r(n)         -- right sideways N
+function r(n)         -- right sideways N
   n = n or 2;
   turtle.turnRight();
   f(n);
   turtle.turnLeft();
 end
-local function l(n)         -- left sideways N
+function l(n)         -- left sideways N
   n = n or 2;
   turtle.turnLeft();
   f(n);
   turtle.turnRight();    
 end
-local function refuelN(refuel_to_minimum_level)
+function refuelN(refuel_to_minimum_level)
   -- vound check and set them to the extrems
   if refuel_to_minimum_level < 1 then
     refuel_to_minimum_level = 1;
@@ -72,25 +72,25 @@ local function refuelN(refuel_to_minimum_level)
     end  
   end    
 end
-local function pf(BlockName)  -- placeForward
+function pf(BlockName)  -- placeForward
   BlockName = BlockName or "minecraft:stonebrick";
   if turtle.detect() == false and searchBlock(BlockName) == true then
     turtle.place();
   end
 end
-local function pU(BlockName)  -- placeUp
+function pU(BlockName)  -- placeUp
   BlockName = BlockName or "minecraft:stonebrick";
   if turtle.detectUp() == false and searchBlock(BlockName) == true then
     turtle.placeUp();
   end    
 end
-local function pD(BlockName)  -- placeDown
+function pD(BlockName)  -- placeDown
   BlockName = BlockName or "minecraft:stonebrick";
   if turtle.detectDown() == false and searchBlock(BlockName) == true then
     turtle.placeDown();
   end    
 end
-local function swD(Blockname)   -- swapDown
+function swD(Blockname)   -- swapDown
   Blockname = Blockname or "chisel:concrete";
   
   local success, data = turtle.inspectDown();
