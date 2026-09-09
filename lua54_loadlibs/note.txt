@@ -1,0 +1,1 @@
+This kind of loading lua libraries only works for the lu54.exe shell, but not in ComputerCraft.
