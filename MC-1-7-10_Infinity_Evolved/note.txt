@@ -1,0 +1,4 @@
+Lua scripts for (modded) Minecraft (Java) 1.7.10 Infinity Evolved (version 2019).
+The scripts may only work for this specific modpack since the mods are configured to interact with each other.
+
+e.g.: interact with diamon_chest;
