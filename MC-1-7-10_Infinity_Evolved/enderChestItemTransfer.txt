@@ -1,0 +1,4 @@
+idea:
+1. turtle.place() ender chest
+2. place/extract items into/from ender chest
+3. turtle.dig() ender chest
