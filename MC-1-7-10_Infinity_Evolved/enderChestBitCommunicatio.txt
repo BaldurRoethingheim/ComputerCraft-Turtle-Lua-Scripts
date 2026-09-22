@@ -1,0 +1,6 @@
+use items ender chest in ender chest to transfer bit wise messages
+color coded ender chest is the communication channel
+8 slots -> 8 bit message
+9th/10th slot -> ACK message (item count changes; 0("no msg"), A1("start msg, id = 1"), B2("id = 2"), A1("id = 3"), B0, A1, B2, A1, B0,A1, B2, A1, B0, ...)
+- both A and B turtle communicate using their one common (stackable) communication item for ACK (msg counter)
+- using '\0' as termination of messsage -> remaining items are cleared from ender chest via sending turtle and both turtle take back their common communication item
