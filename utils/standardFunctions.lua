@@ -1,7 +1,7 @@
 ------------------------------------------------
 -- standard functions 
 ------------------------------------------------
-function df()         -- digForward
+function dF()         -- digForward
   while (turtle.detect()) do
     turtle.dig();
   end    
@@ -20,37 +20,37 @@ function dD()         -- digDown
   turtle.down();
 end
 function f(n)         -- go forward N with digging if block in they way
-  n = n or 2
+  n = n or 1;
   for i=1, n, 1 do
-    df();
+    dF();
   end
 end
 function b(n)         -- go back N
-  n = n or 2
+  n = n or 1;
   for i=1, n, 1 do
     turtle.back();
   end
 end
 function u(n)         -- go up N with digging if block in they way
-  n = n or 1
+  n = n or 1;
   for i=1, n, 1 do
     dU();
   end
 end
 function d(n)         -- go down N with digging if block in they way
-  n = n or 1
+  n = n or 1;
   for i=1, n, 1 do
     dD();
   end
 end
 function r(n)         -- right sideways N
-  n = n or 2;
+  n = n or 1;
   turtle.turnRight();
   f(n);
   turtle.turnLeft();
 end
 function l(n)         -- left sideways N
-  n = n or 2;
+  n = n or 1;
   turtle.turnLeft();
   f(n);
   turtle.turnRight();    
